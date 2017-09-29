@@ -45,4 +45,12 @@ public class SprintBacklog {
 		this.releaseBacklog = releaseBacklog;
 	}
 
+	/**
+	 * Método que retorna uma String de descrição do objeto 
+	 */
+	public String toString() {
+		return "\n\nSPRINTBACKLOG\nFuncionalidade: " + this.getFunctionality() 
+		+ "\nReleaseBacklog: " + this.getReleaseBacklog();
+	}
+
 }

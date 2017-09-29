@@ -101,4 +101,17 @@ public class Task {
 		this.sprintBacklog = sprintBacklog;
 	}
 
+	/**
+	 * Método que retorna uma String de descrição do objeto 
+	 */
+	public String toString() {
+		return "\n\nTASK\nDescrição: " + this.getDescription() 
+		+ "\nPrioridade: " + this.getPriority()
+		+ "\nEstado: " + this.getState()
+		+ "\nProgresso: " + this.getProgress()
+		+ "\nUserHistory: " + this.getUserHistory()
+		+ "\nProfissional: " + this.getProfessional()
+		+ "\nSprintBacklog: " + this.getSprintBacklog();
+	}
+
 }

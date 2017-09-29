@@ -55,5 +55,14 @@ public class UserStory {
 	public void setProductBacklog(ProductBacklog productBacklog) {
 		this.productBacklog = productBacklog;
 	}
-	
+
+	/**
+	 * Método que retorna uma String de descrição do objeto 
+	 */
+	public String toString() {
+		return "\n\nUSER HISTORY\nPrioridade: " + this.getPriority() 
+		+ "\nRequisito: " + this.getRequirement()
+		+ "\nProductBacklog: " + this.getProductBacklog();
+	}
+
 }

@@ -57,4 +57,13 @@ public class ProductBacklog {
 		this.productOwner = productOwner;
 	}
 
+	/**
+	 * Método que retorna uma String de descrição do objeto 
+	 */
+	public String toString() {
+		return "\n\nPRODUCTBACKLOG\nData: " + this.getDate() 
+		+ "\nProjeto: " + this.getProject()
+		+ "\nProductOwner: " + this.getProductOwner();
+	}
+
 }

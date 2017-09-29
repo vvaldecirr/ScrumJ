@@ -69,4 +69,14 @@ public class ReleaseBacklog {
 		this.scrumMaster = scrumMaster;
 	}
 
+	/**
+	 * Método que retorna uma String de descrição do objeto 
+	 */
+	public String toString() {
+		return "\n\nRELEASEBACKLOG\nData limite: " + this.getDeadLine() 
+		+ "\nAvaliação: " + this.getAvaliationn()
+		+ "\nProductBacklog: " + this.getProductBacklog()
+		+ "\nScrumMaster: " + this.getScrumMaster();
+	}
+
 }

@@ -48,7 +48,8 @@ public class Project {
 	 * Método que retorna uma String de descrição do objeto 
 	 */
 	public String toString() {
-		return this.title + " - " + this.description;
+		return "\n\nPROJECT\nTítulo: " + this.getTitle() 
+		+ "\nDescrição: " + this.getDescription();
 	}
 
 }

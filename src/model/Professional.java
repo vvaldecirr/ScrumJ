@@ -56,4 +56,13 @@ public class Professional {
 		this.function = function;
 	}
 
+	/**
+	 * Método que retorna uma String de descrição do objeto 
+	 */
+	public String toString() {
+		return "\n\nPROFESSIONAL\nEmail: " + this.getEmail() 
+		+ "\nSenha: " + this.getUnicPass()
+		+ "\nFunção: " + this.getFunction();
+	}
+
 }
