@@ -8,8 +8,7 @@ package model;
  */
 public class Project {
 	
-	private String title;
-	
+	private String title;	
 	private String description;
 	
 	/**
@@ -43,6 +42,13 @@ public class Project {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+
+	/**
+	 * Método que retorna uma String de descrição do objeto 
+	 */
+	public String toString() {
+		return this.title + " - " + this.description;
 	}
 
 }
