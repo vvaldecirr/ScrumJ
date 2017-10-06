@@ -12,7 +12,6 @@ public class ReleaseBacklog {
 	
 	private Date deadLine;
 	private String avaliation;
-	private ProductBacklog productBacklog;
 	private Professional scrumMaster;
 	
 	/**
@@ -27,14 +26,12 @@ public class ReleaseBacklog {
 	 * 
 	 * @param deadLineDate
 	 * @param avaliation
-	 * @param productBacklog
 	 * @param scrumMaster
 	 */
-	public ReleaseBacklog(Date deadLineDate, String avaliation, ProductBacklog productBacklog, Professional scrumMaster) {
+	public ReleaseBacklog(Date deadLineDate, String avaliation, Professional scrumMaster) {
 		super();
 		this.setDeadLine(deadLineDate);
 		this.setAvaliationn(avaliation);
-		this.setProductBacklog(productBacklog);
 		this.setScrumMaster(scrumMaster);
 	}
 
@@ -54,14 +51,6 @@ public class ReleaseBacklog {
 		this.avaliation = avaliation;
 	}
 
-	public ProductBacklog getProductBacklog() {
-		return productBacklog;
-	}
-
-	public void setProductBacklog(ProductBacklog productBacklog) {
-		this.productBacklog = productBacklog;
-	}
-
 	public Professional getScrumMaster() {
 		return scrumMaster;
 	}
@@ -77,7 +66,6 @@ public class ReleaseBacklog {
 	public String toString() {
 		return "\n\nRELEASEBACKLOG\nData limite: " + this.getDeadLine() 
 		+ "\nAvaliação: " + this.getAvaliationn()
-		+ "\nProductBacklog: " + this.getProductBacklog()
 		+ "\nScrumMaster: " + this.getScrumMaster();
 	}
 

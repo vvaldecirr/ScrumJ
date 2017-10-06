@@ -11,6 +11,7 @@ public class UserStory {
 	private Integer priority;
 	private String requirement;
 	private ProductBacklog productBacklog;
+	private ReleaseBacklog releaseBacklog;
 	
 	/**
 	 * Simple Constructor
@@ -25,6 +26,7 @@ public class UserStory {
 	 * @param priority
 	 * @param requirement
 	 * @param productBacklog
+	 * @param releaseBacklog
 	 */
 	public UserStory(Integer priority, String requirement, ProductBacklog productBacklog) {
 		super();
@@ -57,6 +59,14 @@ public class UserStory {
 		this.productBacklog = productBacklog;
 	}
 
+	public ReleaseBacklog getReleaseBacklog() {
+		return releaseBacklog;
+	}
+
+	public void setReleaseBacklog(ReleaseBacklog releaseBacklog) {
+		this.releaseBacklog = releaseBacklog;
+	}
+
 	/**
 	 * Método que retorna uma String de descrição do objeto 
 	 */
@@ -64,7 +74,8 @@ public class UserStory {
 	public String toString() {
 		return "\n\nUSER HISTORY\nPrioridade: " + this.getPriority() 
 		+ "\nRequisito: " + this.getRequirement()
-		+ "\nProductBacklog: " + this.getProductBacklog();
+		+ "\nProductBacklog: " + this.getProductBacklog()
+		+ "\nReleaseBacklog: " + this.getReleaseBacklog();
 	}
 
 }
