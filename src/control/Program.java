@@ -1,6 +1,5 @@
 package control;
 
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import javax.xml.bind.ValidationException;
@@ -14,18 +13,18 @@ import model.UserStory;
 public class Program {
 
 	/**
-	 * MÈtodo para testar o modelo
+	 * MÔøΩtodo para testar o modelo
 	 * 
 	 * @param args
 	 * @throws ValidationException 
 	 */
 	public static void main(String[] args) throws Exception {
-		Project pj1 = new Project("ScrumJ", "Ferramenta para r·pida implementaÁ„o do mÈtodo SCRUM em pequenos projetos.");
+		Project pj1 = new Project("ScrumJ", "Ferramenta para r√°pida implementa√ß√£o do m√©todo SCRUM em pequenos projetos.");
 //		System.out.println(pj1);
-		Professional		pf1		= new Professional("vvaldecirr@hotmail.com", "12345678");
-		Team				team		= new Team("Analista", pf1, pj1);
-		ProductBacklog	pbl1		= new ProductBacklog(new Date(), pj1, pf1);
-		UserStory		us1		= new UserStory(1, "Impress„o de relatÛrios", pbl1);
+		Professional	pf1		= new Professional("vvaldecirr@hotmail.com", "12345678");
+		Team			team	= new Team("Analista", pf1, pj1);
+		ProductBacklog	pbl1	= new ProductBacklog(new Date(), pj1, pf1);
+		UserStory		us1		= new UserStory(1, "Impress√£o de relat√≥rios", pbl1);
 		System.out.println(us1);
 
 	}

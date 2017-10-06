@@ -67,7 +67,7 @@ public class UserStory {
 	}
 
 	/**
-	 * Método que retorna uma String de descrição do objeto 
+	 * MÃ©todo que retorna uma String de descriÃ§Ã£o do objeto 
 	 */
 	@Override
 	public String toString() {

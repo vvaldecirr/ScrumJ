@@ -60,12 +60,12 @@ public class ReleaseBacklog {
 	}
 
 	/**
-	 * Método que retorna uma String de descrição do objeto 
+	 * MÃ©todo que retorna uma String de descriÃ§Ã£o do objeto 
 	 */
 	@Override
 	public String toString() {
 		return "\n\nRELEASEBACKLOG\nData limite: " + this.getDeadLine() 
-		+ "\nAvaliação: " + this.getAvaliationn()
+		+ "\nAvaliaï¿½ï¿½o: " + this.getAvaliationn()
 		+ "\nScrumMaster: " + this.getScrumMaster();
 	}
 

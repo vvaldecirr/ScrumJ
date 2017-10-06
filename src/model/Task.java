@@ -101,11 +101,11 @@ public class Task {
 	}
 
 	/**
-	 * Método que retorna uma String de descrição do objeto 
+	 * MÃ©todo que retorna uma String de descriÃ§Ã£o do objeto 
 	 */
 	@Override
 	public String toString() {
-		return "\n\nTASK\nDescrição: " + this.getDescription() 
+		return "\n\nTASK\nDescriÃ§Ã£o: " + this.getDescription() 
 		+ "\nPrioridade: " + this.getPriority()
 		+ "\nEstado: " + this.getState()
 		+ "\nProgresso: " + this.getProgress()

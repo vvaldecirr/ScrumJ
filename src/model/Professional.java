@@ -37,7 +37,7 @@ public class Professional {
 	}
 	
 	/**
-	 * Método de validação de e-mail
+	 * MÃ©todo de validaÃ§Ã£o de e-mail
 	 * @param email
 	 * @throws Exception
 	 */
@@ -46,17 +46,17 @@ public class Professional {
 	    Matcher m = p.matcher(email); 
 	    
 	    if (!m.find())
-	    		throw new Exception("O e-mail informado é inválido");
+	    		throw new Exception("O e-mail informado ï¿½ invï¿½lido");
 	}
 	
 	/**
-	 * Método de validação de senha
+	 * MÃ©todo de validaÃ§Ã£o de senha
 	 * @param unicPass
 	 * @throws Exception
 	 */
 	public static void validaUnicPass(String unicPass) throws Exception {
 		if (unicPass.length() < 8)
-			throw new Exception("A senha deve conter no mínimo oito caracteres");
+			throw new Exception("A senha deve conter no mï¿½nimo oito caracteres");
 	}
 	
 	public String getEmail() {
@@ -78,7 +78,7 @@ public class Professional {
 	}
 
 	/**
-	 * Método que retorna uma String de descrição do objeto 
+	 * MÃ©todo que retorna uma String de descriÃ§Ã£o do objeto 
 	 */
 	@Override
 	public String toString() {
