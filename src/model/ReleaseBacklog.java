@@ -1,19 +1,21 @@
 package model;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Model Class
- * 
+ *
  * @author Valdecir
  *
  */
 public class ReleaseBacklog {
-	
+
 	private Date deadLine;
 	private String avaliation;
 	private Professional scrumMaster;
-	
+	private List<UserStory> userStories;
+
 	/**
 	 * Simple Constructor
 	 */
@@ -23,7 +25,7 @@ public class ReleaseBacklog {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param deadLineDate
 	 * @param avaliation
 	 * @param scrumMaster
@@ -59,14 +61,22 @@ public class ReleaseBacklog {
 		this.scrumMaster = scrumMaster;
 	}
 
+	public List<UserStory> getUserStories() {
+		return userStories;
+	}
+
+	public void setUserStories(List<UserStory> userStories) {
+		this.userStories = userStories;
+	}
+
 	/**
 	 * Método que retorna uma String de descrição do objeto 
 	 */
 	@Override
 	public String toString() {
-		return "\n\nRELEASEBACKLOG\nData limite: " + this.getDeadLine() 
-		+ "\nAvalia��o: " + this.getAvaliationn()
-		+ "\nScrumMaster: " + this.getScrumMaster();
+		return "\n\nRELEASEBACKLOG\nData limite: " + this.getDeadLine()
+				+ "\nAvalia��o: " + this.getAvaliationn()
+				+ "\nScrumMaster: " + this.getScrumMaster();
 	}
 
 }

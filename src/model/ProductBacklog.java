@@ -1,29 +1,31 @@
 package model;
 
 import java.util.Date;
+import java.util.List;
 
 /**
  * Model Class
- * 
+ *
  * @author Valdecir
  *
  */
 public class ProductBacklog {
-	
+
 	private Date deadLine;
 	private Project project;
 	private Professional productOwner;
-	
+	private List<UserStory> userStories;
+
 	/**
 	 * Simple Constructor
 	 */
 	public ProductBacklog() {
-		
+
 	}
-	
+
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param deadLine
 	 * @param project
 	 * @param productOwner
@@ -59,14 +61,22 @@ public class ProductBacklog {
 		this.productOwner = productOwner;
 	}
 
+
+	public List<UserStory> getUserStories() {
+		return userStories;
+	}
+
+	public void setUserStories(List<UserStory> userStories) {
+		this.userStories = userStories;
+	}
 	/**
 	 * Método que retorna uma String de descrição do objeto 
 	 */
 	@Override
 	public String toString() {
-		return "\n\nPRODUCTBACKLOG\nData: " + this.getDeadLine() 
-		+ "\nProjeto: " + this.getProject()
-		+ "\nProductOwner: " + this.getProductOwner();
+		return "\n\nPRODUCTBACKLOG\nData: " + this.getDeadLine()
+				+ "\nProjeto: " + this.getProject()
+				+ "\nProductOwner: " + this.getProductOwner();
 	}
 
 }
