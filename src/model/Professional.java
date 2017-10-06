@@ -1,5 +1,10 @@
 package model;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.xml.bind.ValidationException;
+
 /**
  * Model Class
  * 
@@ -23,18 +28,43 @@ public class Professional {
 	 * 
 	 * @param email
 	 * @param unicPass
+	 * @throws Exception 
 	 */
-	public Professional(String email, String unicPass) {
+	public Professional(String email, String unicPass) throws Exception {
 		super();
-		this.email		= email;
-		this.unicPass	= unicPass;
+		this.setEmail(email);
+		this.setUnicPass(unicPass);
 	}
-
+	
+	/**
+	 * Método de validação de e-mail
+	 * @param email
+	 * @throws Exception
+	 */
+	public static void validaEmail(String email) throws Exception{
+	    Pattern p = Pattern.compile("^[\\w-]+(\\.[\\w-]+)*@([\\w-]+\\.)+[a-zA-Z]{2,7}$"); 
+	    Matcher m = p.matcher(email); 
+	    
+	    if (!m.find())
+	    		throw new Exception("O e-mail informado é inválido");
+	}
+	
+	/**
+	 * Método de validação de senha
+	 * @param unicPass
+	 * @throws Exception
+	 */
+	public static void validaUnicPass(String unicPass) throws Exception {
+		if (unicPass.length() < 8)
+			throw new Exception("A senha deve conter no mínimo oito caracteres");
+	}
+	
 	public String getEmail() {
 		return email;
 	}
 
-	public void setEmail(String email) {
+	public void setEmail(String email) throws Exception {
+		validaEmail(email);
 		this.email = email;
 	}
 
@@ -42,7 +72,8 @@ public class Professional {
 		return unicPass;
 	}
 
-	public void setUnicPass(String unicPass) {
+	public void setUnicPass(String unicPass) throws Exception {
+		validaUnicPass(unicPass);
 		this.unicPass = unicPass;
 	}
 

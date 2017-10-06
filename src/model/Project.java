@@ -23,13 +23,14 @@ public class Project {
 	 * 
 	 * @param title
 	 * @param description
+	 * @throws Exception 
 	 */
 	public Project(String title, String description) {
 		super();
 		this.setTitle(title);
 		this.setDescription(description);
 	}
-
+	
 	public String getTitle() {
 		return title;
 	}
