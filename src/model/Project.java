@@ -15,6 +15,7 @@ public class Project {
 	 * Simple Constructor
 	 */
 	public Project() {
+		
 	}
 
 	/**
@@ -24,6 +25,7 @@ public class Project {
 	 * @param description
 	 */
 	public Project(String title, String description) {
+		super();
 		this.setTitle(title);
 		this.setDescription(description);
 	}
@@ -47,6 +49,7 @@ public class Project {
 	/**
 	 * Método que retorna uma String de descrição do objeto 
 	 */
+	@Override
 	public String toString() {
 		return "\n\nPROJECT\nTítulo: " + this.getTitle() 
 		+ "\nDescrição: " + this.getDescription();

@@ -25,6 +25,7 @@ public class SprintBacklog {
 	 * @param releaseBacklog
 	 */
 	public SprintBacklog(String functionality, ReleaseBacklog releaseBacklog) {
+		super();
 		this.setFunctionality(functionality);
 		this.setReleaseBacklog(releaseBacklog);
 	}
@@ -48,6 +49,7 @@ public class SprintBacklog {
 	/**
 	 * Método que retorna uma String de descrição do objeto 
 	 */
+	@Override
 	public String toString() {
 		return "\n\nSPRINTBACKLOG\nFuncionalidade: " + this.getFunctionality() 
 		+ "\nReleaseBacklog: " + this.getReleaseBacklog();

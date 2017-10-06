@@ -18,6 +18,7 @@ public class ProductBacklog {
 	 * Simple Constructor
 	 */
 	public ProductBacklog() {
+		
 	}
 	
 	/**
@@ -28,6 +29,7 @@ public class ProductBacklog {
 	 * @param productOwner
 	 */
 	public ProductBacklog(Date date, Project project, Professional productOwner) {
+		super();
 		this.setDate(date);
 		this.setProject(project);
 		this.setProductOwner(productOwner);
@@ -60,6 +62,7 @@ public class ProductBacklog {
 	/**
 	 * Método que retorna uma String de descrição do objeto 
 	 */
+	@Override
 	public String toString() {
 		return "\n\nPRODUCTBACKLOG\nData: " + this.getDate() 
 		+ "\nProjeto: " + this.getProject()

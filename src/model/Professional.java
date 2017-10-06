@@ -10,7 +10,6 @@ public class Professional {
 	
 	private String email;
 	private String unicPass;
-	private String function;
 	
 	/**
 	 * Simple Constructor
@@ -24,12 +23,11 @@ public class Professional {
 	 * 
 	 * @param email
 	 * @param unicPass
-	 * @param function
 	 */
-	public Professional(String email, String unicPass, String function) {
+	public Professional(String email, String unicPass) {
+		super();
 		this.email		= email;
 		this.unicPass	= unicPass;
-		this.function	= function;
 	}
 
 	public String getEmail() {
@@ -48,21 +46,13 @@ public class Professional {
 		this.unicPass = unicPass;
 	}
 
-	public String getFunction() {
-		return function;
-	}
-
-	public void setFunction(String function) {
-		this.function = function;
-	}
-
 	/**
 	 * Método que retorna uma String de descrição do objeto 
 	 */
+	@Override
 	public String toString() {
 		return "\n\nPROFESSIONAL\nEmail: " + this.getEmail() 
-		+ "\nSenha: " + this.getUnicPass()
-		+ "\nFunção: " + this.getFunction();
+		+ "\nSenha: " + this.getUnicPass();
 	}
 
 }

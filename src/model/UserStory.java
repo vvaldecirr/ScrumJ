@@ -27,6 +27,7 @@ public class UserStory {
 	 * @param productBacklog
 	 */
 	public UserStory(Integer priority, String requirement, ProductBacklog productBacklog) {
+		super();
 		this.setPriority(priority);
 		this.setRequirement(requirement);
 		this.setProductBacklog(productBacklog);
@@ -59,6 +60,7 @@ public class UserStory {
 	/**
 	 * Método que retorna uma String de descrição do objeto 
 	 */
+	@Override
 	public String toString() {
 		return "\n\nUSER HISTORY\nPrioridade: " + this.getPriority() 
 		+ "\nRequisito: " + this.getRequirement()

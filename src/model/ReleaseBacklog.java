@@ -31,6 +31,7 @@ public class ReleaseBacklog {
 	 * @param scrumMaster
 	 */
 	public ReleaseBacklog(Date deadLineDate, String avaliation, ProductBacklog productBacklog, Professional scrumMaster) {
+		super();
 		this.setDeadLine(deadLineDate);
 		this.setAvaliationn(avaliation);
 		this.setProductBacklog(productBacklog);
@@ -72,6 +73,7 @@ public class ReleaseBacklog {
 	/**
 	 * Método que retorna uma String de descrição do objeto 
 	 */
+	@Override
 	public String toString() {
 		return "\n\nRELEASEBACKLOG\nData limite: " + this.getDeadLine() 
 		+ "\nAvaliação: " + this.getAvaliationn()

@@ -36,6 +36,7 @@ public class Task {
 	 */
 	public Task(String description, Integer priority, String state, Float progress, UserStory userHistory,
 			Professional professional, SprintBacklog sprintBacklog) {
+		super();
 		this.setDescription(description);
 		this.setPriority(priority);
 		this.setState(state);
@@ -104,6 +105,7 @@ public class Task {
 	/**
 	 * Método que retorna uma String de descrição do objeto 
 	 */
+	@Override
 	public String toString() {
 		return "\n\nTASK\nDescrição: " + this.getDescription() 
 		+ "\nPrioridade: " + this.getPriority()
