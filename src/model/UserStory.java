@@ -76,6 +76,7 @@ public class UserStory {
 	public void setTasks(List<Task> tasks) {
 		this.tasks = tasks;
 	}
+	
 	/**
 	 * Método que retorna uma String de descrição do objeto 
 	 */

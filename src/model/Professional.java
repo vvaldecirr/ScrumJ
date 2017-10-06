@@ -46,7 +46,7 @@ public class Professional {
 	    Matcher m = p.matcher(email); 
 	    
 	    if (!m.find())
-	    		throw new Exception("O e-mail informado � inv�lido");
+	    		throw new Exception("O e-mail informado é inválido");
 	}
 	
 	/**
@@ -56,7 +56,7 @@ public class Professional {
 	 */
 	public static void validaUnicPass(String unicPass) throws Exception {
 		if (unicPass.length() < 8)
-			throw new Exception("A senha deve conter no m�nimo oito caracteres");
+			throw new Exception("A senha deve conter no mínimo oito caracteres");
 	}
 	
 	public String getEmail() {
@@ -64,7 +64,7 @@ public class Professional {
 	}
 
 	public void setEmail(String email) throws Exception {
-		validaEmail(email);
+		Professional.validaEmail(email);
 		this.email = email;
 	}
 
