@@ -10,7 +10,7 @@ import java.util.Date;
  */
 public class ProductBacklog {
 	
-	private Date date;
+	private Date deadLine;
 	private Project project;
 	private Professional productOwner;
 	
@@ -24,23 +24,23 @@ public class ProductBacklog {
 	/**
 	 * Constructor
 	 * 
-	 * @param date
+	 * @param deadLine
 	 * @param project
 	 * @param productOwner
 	 */
-	public ProductBacklog(Date date, Project project, Professional productOwner) {
+	public ProductBacklog(Date deadLine, Project project, Professional productOwner) {
 		super();
-		this.setDate(date);
+		this.setDeadLine(deadLine);
 		this.setProject(project);
 		this.setProductOwner(productOwner);
 	}
 
-	public Date getDate() {
-		return date;
+	public Date getDeadLine() {
+		return deadLine;
 	}
 
-	public void setDate(Date date) {
-		this.date = date;
+	public void setDeadLine(Date deadLine) {
+		this.deadLine = deadLine;
 	}
 
 	public Project getProject() {
@@ -64,7 +64,7 @@ public class ProductBacklog {
 	 */
 	@Override
 	public String toString() {
-		return "\n\nPRODUCTBACKLOG\nData: " + this.getDate() 
+		return "\n\nPRODUCTBACKLOG\nData: " + this.getDeadLine() 
 		+ "\nProjeto: " + this.getProject()
 		+ "\nProductOwner: " + this.getProductOwner();
 	}

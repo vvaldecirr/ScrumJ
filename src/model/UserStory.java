@@ -26,7 +26,6 @@ public class UserStory {
 	 * @param priority
 	 * @param requirement
 	 * @param productBacklog
-	 * @param releaseBacklog
 	 */
 	public UserStory(Integer priority, String requirement, ProductBacklog productBacklog) {
 		super();
