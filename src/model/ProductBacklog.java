@@ -61,6 +61,11 @@ public class ProductBacklog {
 		this.productOwner = productOwner;
 	}
 
+	public void addUserStorie(UserStory userStory) {
+		this.userStories.add(userStory);
+	}
+
+	public void removeUserStorie(UserStory userStory) { this.userStories.remove(userStory); }
 
 	public List<UserStory> getUserStories() {
 		return userStories;
