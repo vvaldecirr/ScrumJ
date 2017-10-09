@@ -13,8 +13,9 @@ public class ReleaseBacklog {
 
 	private Date deadLine;
 	private String avaliation;
-	private Professional scrumMaster;
+	private Professional productOwner;
 	private List<UserStory> userStories;
+	private List<SprintBacklog> sprintBacklogs;
 
 	/**
 	 * Simple Constructor
@@ -30,11 +31,11 @@ public class ReleaseBacklog {
 	 * @param avaliation
 	 * @param scrumMaster
 	 */
-	public ReleaseBacklog(Date deadLineDate, String avaliation, Professional scrumMaster) {
+	public ReleaseBacklog(Date deadLineDate, String avaliation, Professional productOwner) {
 		super();
 		this.setDeadLine(deadLineDate);
 		this.setAvaliationn(avaliation);
-		this.setScrumMaster(scrumMaster);
+		this.setProductOwner(productOwner);
 	}
 
 	public Date getDeadLine() {
@@ -53,29 +54,45 @@ public class ReleaseBacklog {
 		this.avaliation = avaliation;
 	}
 
-	public Professional getScrumMaster() {
-		return scrumMaster;
+	public Professional getProductOwner() {
+		return productOwner;
 	}
 
-	public void setScrumMaster(Professional scrumMaster) {
-		this.scrumMaster = scrumMaster;
+	public void setProductOwner(Professional productOwner) {
+		this.productOwner = productOwner;
 	}
 
 	public List<UserStory> getUserStories() {
 		return userStories;
 	}
 
-	public void addUserStorie(UserStory userStory) {
-		this.userStories.add(userStory);
-	}
-
-    public void removeUserStorie(UserStory userStory) {
-        this.userStories.remove(userStory);
-    }
-
 	public void setUserStories(List<UserStory> userStories) {
 		this.userStories = userStories;
 	}
+
+	public void addUserStory(UserStory userStory) {
+		this.userStories.add(userStory);
+	}
+
+    public void removeUserStory(UserStory userStory) {
+        this.userStories.remove(userStory);
+    }
+
+	public List<SprintBacklog> getSprintBacklogs() {
+		return sprintBacklogs;
+	}
+
+	public void setSprintBacklogs(List<SprintBacklog> sprintBacklogs) {
+		this.sprintBacklogs = sprintBacklogs;
+	}
+
+	public void addSprintBacklog(SprintBacklog sprintBacklog) {
+		this.sprintBacklogs.add(sprintBacklog);
+	}
+
+    public void removeUserStory(SprintBacklog sprintBacklog) {
+        this.sprintBacklogs.remove(sprintBacklog);
+    }
 
 	/**
 	 * Método que retorna uma String de descrição do objeto 
@@ -84,7 +101,7 @@ public class ReleaseBacklog {
 	public String toString() {
 		return "\n\nRELEASEBACKLOG\nData limite: " + this.getDeadLine()
 				+ "\nAvalia��o: " + this.getAvaliationn()
-				+ "\nScrumMaster: " + this.getScrumMaster();
+				+ "\nProductOwner: " + this.getProductOwner();
 	}
 
 }

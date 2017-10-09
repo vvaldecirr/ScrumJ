@@ -1,0 +1,11 @@
+#
+# Foram encontrados problemas de desorganização de métodos.
+# Procurar manter espaçamentos e ordem lógica entre os métodos.
+# Evitar também erros de digitação para que não gere dificuldades
+# em leitura e compreensão em futuras manutenções
+
+1-  Os métodos de implementação de coleções (por exigência do professor)
+    precisam possuir dupla navegabilidade, logo é necessário que, na 
+    camada de modelo, ao adicionar um objeto em uma lista é obrigatório
+    atribuir também o vínculo no objeto da outra extremidade do objeto 
+    e vice-versa caso já não exista.

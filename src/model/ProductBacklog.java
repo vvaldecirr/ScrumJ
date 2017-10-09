@@ -13,7 +13,7 @@ public class ProductBacklog {
 
 	private Date deadLine;
 	private Project project;
-	private Professional productOwner;
+	private Professional scrumMaster;
 	private List<UserStory> userStories;
 
 	/**
@@ -30,11 +30,11 @@ public class ProductBacklog {
 	 * @param project
 	 * @param productOwner
 	 */
-	public ProductBacklog(Date deadLine, Project project, Professional productOwner) {
+	public ProductBacklog(Date deadLine, Project project, Professional scrumMaster) {
 		super();
 		this.setDeadLine(deadLine);
 		this.setProject(project);
-		this.setProductOwner(productOwner);
+		this.setScrumMaster(scrumMaster);
 	}
 
 	public Date getDeadLine() {
@@ -53,19 +53,13 @@ public class ProductBacklog {
 		this.project = project;
 	}
 
-	public Professional getProductOwner() {
-		return productOwner;
+	public Professional getScrumMaster() {
+		return scrumMaster;
 	}
 
-	public void setProductOwner(Professional productOwner) {
-		this.productOwner = productOwner;
+	public void setScrumMaster(Professional scrumMaster) {
+		this.scrumMaster = scrumMaster;
 	}
-
-	public void addUserStorie(UserStory userStory) {
-		this.userStories.add(userStory);
-	}
-
-	public void removeUserStorie(UserStory userStory) { this.userStories.remove(userStory); }
 
 	public List<UserStory> getUserStories() {
 		return userStories;
@@ -74,6 +68,15 @@ public class ProductBacklog {
 	public void setUserStories(List<UserStory> userStories) {
 		this.userStories = userStories;
 	}
+
+	public void addUserStory(UserStory userStory) {
+		this.userStories.add(userStory);
+	}
+
+	public void removeUserStory(UserStory userStory) { 
+		this.userStories.remove(userStory); 
+	}
+
 	/**
 	 * Método que retorna uma String de descrição do objeto 
 	 */
@@ -81,7 +84,7 @@ public class ProductBacklog {
 	public String toString() {
 		return "\n\nPRODUCTBACKLOG\nData: " + this.getDeadLine()
 				+ "\nProjeto: " + this.getProject()
-				+ "\nProductOwner: " + this.getProductOwner();
+				+ "\nScrumMaster: " + this.getScrumMaster();
 	}
 
 }

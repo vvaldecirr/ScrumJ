@@ -73,17 +73,16 @@ public class UserStory {
 		return tasks;
 	}
 
+	public void setTasks(List<Task> tasks) {
+		this.tasks = tasks;
+	}
+
 	public void addTask(Task task) {
 		this.tasks.add(task);
 	}
 
 	public void removeTask(Task task) {
 		this.tasks.remove(task);
-	}
-
-
-	public void setTasks(List<Task> tasks) {
-		this.tasks = tasks;
 	}
 	
 	/**
