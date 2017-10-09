@@ -1,5 +1,7 @@
 package model;
 
+import java.util.List;
+
 /**
  * Model Class
  * 
@@ -10,6 +12,7 @@ public class SprintBacklog {
 
 	private String functionality;
 	private ReleaseBacklog releaseBacklog;
+	private List<Task> tasks;
 	
 	/**
 	 * Simple Constructor
@@ -45,6 +48,22 @@ public class SprintBacklog {
 	public void setReleaseBacklog(ReleaseBacklog releaseBacklog) {
 		this.releaseBacklog = releaseBacklog;
 	}
+
+	public void addTask(Task task){
+		this.tasks.add(task);
+	}
+
+	public void removeTask(Task task){
+		this.tasks.remove(task);
+	}
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
+    }
 
 	/**
 	 * Método que retorna uma String de descrição do objeto 
