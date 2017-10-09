@@ -10,6 +10,7 @@ public class Project {
 	
 	private String title;	
 	private String description;
+	private ProductBacklog productBacklog;
 	
 	/**
 	 * Simple Constructor
@@ -45,6 +46,14 @@ public class Project {
 
 	public void setDescription(String description) {
 		this.description = description;
+	}
+	
+	public ProductBacklog getProductBacklog() {
+		return productBacklog;
+	}
+
+	public void setProductBacklog(ProductBacklog productBacklog) {
+		this.productBacklog = productBacklog;
 	}
 
 	/**
