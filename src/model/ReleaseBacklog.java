@@ -65,6 +65,14 @@ public class ReleaseBacklog {
 		return userStories;
 	}
 
+	public void addUserStorie(UserStory userStory) {
+		this.userStories.add(userStory);
+	}
+
+    public void removeUserStorie(UserStory userStory) {
+        this.userStories.remove(userStory);
+    }
+
 	public void setUserStories(List<UserStory> userStories) {
 		this.userStories = userStories;
 	}
