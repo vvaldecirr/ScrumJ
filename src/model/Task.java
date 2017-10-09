@@ -31,17 +31,14 @@ public class Task {
 	 * @param state
 	 * @param progress
 	 * @param userHistory
-	 * @param sprintBacklog
 	 */
-	public Task(String description, Integer priority, String state, Float progress, UserStory userHistory,
-			SprintBacklog sprintBacklog) {
+	public Task(String description, Integer priority, String state, Float progress, UserStory userHistory) {
 		super();
 		this.setDescription(description);
 		this.setPriority(priority);
 		this.setState(state);
 		this.setProgress(progress);
 		this.setUserHistory(userHistory);
-		this.setSprintBacklog(sprintBacklog);
 	}
 
 	public String getDescription() {
