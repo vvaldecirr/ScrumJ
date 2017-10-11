@@ -14,7 +14,7 @@ public class ProductBacklog {
 	private Date deadLine;
 	private Project project;
 	private Professional scrumMaster;
-	private List<UserStory> userStories;
+	private List<UserStory> listUserStories;
 
 	/**
 	 * Simple Constructor
@@ -82,19 +82,15 @@ public class ProductBacklog {
 	}
 
 	public List<UserStory> getUserStories() {
-		return userStories;
-	}
-
-	public void setUserStories(List<UserStory> userStories) {
-		this.userStories = userStories;
+		return listUserStories;
 	}
 
 	public void addUserStory(UserStory userStory) {
-		this.userStories.add(userStory);
+		this.listUserStories.add(userStory);
 	}
 
 	public void removeUserStory(UserStory userStory) { 
-		this.userStories.remove(userStory); 
+		this.listUserStories.remove(userStory); 
 	}
 
 	/**

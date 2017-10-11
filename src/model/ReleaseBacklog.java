@@ -14,8 +14,8 @@ public class ReleaseBacklog {
 	private Date deadLine;
 	private String avaliation;
 	private Professional productOwner;
-	private List<UserStory> userStories;
-	private List<SprintBacklog> sprintBacklogs;
+	private List<UserStory> listUserStories;
+	private List<SprintBacklog> listSprintBacklogs;
 
 	/**
 	 * Simple Constructor
@@ -63,35 +63,27 @@ public class ReleaseBacklog {
 	}
 
 	public List<UserStory> getUserStories() {
-		return userStories;
-	}
-
-	public void setUserStories(List<UserStory> userStories) {
-		this.userStories = userStories;
+		return listUserStories;
 	}
 
 	public void addUserStory(UserStory userStory) {
-		this.userStories.add(userStory);
+		this.listUserStories.add(userStory);
 	}
 
     public void removeUserStory(UserStory userStory) {
-        this.userStories.remove(userStory);
+        this.listUserStories.remove(userStory);
     }
 
 	public List<SprintBacklog> getSprintBacklogs() {
-		return sprintBacklogs;
-	}
-
-	public void setSprintBacklogs(List<SprintBacklog> sprintBacklogs) {
-		this.sprintBacklogs = sprintBacklogs;
+		return listSprintBacklogs;
 	}
 
 	public void addSprintBacklog(SprintBacklog sprintBacklog) {
-		this.sprintBacklogs.add(sprintBacklog);
+		this.listSprintBacklogs.add(sprintBacklog);
 	}
 
     public void removeUserStory(SprintBacklog sprintBacklog) {
-        this.sprintBacklogs.remove(sprintBacklog);
+        this.listSprintBacklogs.remove(sprintBacklog);
     }
 
 	/**
@@ -100,7 +92,7 @@ public class ReleaseBacklog {
 	@Override
 	public String toString() {
 		return "\n\nRELEASEBACKLOG\nData limite: " + this.getDeadLine()
-				+ "\nAvalia��o: " + this.getAvaliationn()
+				+ "\nAvaliação: " + this.getAvaliationn()
 				+ "\nProductOwner: " + this.getProductOwner();
 	}
 

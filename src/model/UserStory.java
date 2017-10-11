@@ -14,7 +14,7 @@ public class UserStory {
 	private String requirement;
 	private ProductBacklog productBacklog;
 	private ReleaseBacklog releaseBacklog;
-	private List<Task> tasks;
+	private List<Task> listTasks;
 
 	/**
 	 * Simple Constructor
@@ -70,19 +70,15 @@ public class UserStory {
 	}
 
 	public List<Task> getTasks() {
-		return tasks;
-	}
-
-	public void setTasks(List<Task> tasks) {
-		this.tasks = tasks;
+		return listTasks;
 	}
 
 	public void addTask(Task task) {
-		this.tasks.add(task);
+		this.listTasks.add(task);
 	}
 
 	public void removeTask(Task task) {
-		this.tasks.remove(task);
+		this.listTasks.remove(task);
 	}
 	
 	/**
