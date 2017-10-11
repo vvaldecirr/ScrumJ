@@ -49,8 +49,28 @@ public class ProductBacklog {
 		return project;
 	}
 
+	/**
+	 * Método alterado para garantir que a visibilidade bidirecional seja íntegra
+	 * @param productBacklog
+	 */
 	public void setProject(Project project) {
-		this.project = project;
+//		this.project = project;
+		
+		//Se o objeto a ser setado for o mesmo, não fazer nada
+		if (this.project == project)
+			return;
+		
+		//Se estiver nulificando o atributo garantir a integridade
+		if (project == null) {
+			this.project.setProductBacklog(null);
+			this.project = null;
+		} else { //Se o objeto a ser setado não for o mesmo, substituir garantindo a integridade 
+			if (this.project != null)
+				this.project.setProductBacklog(null);
+			
+			this.project = project;
+			project.setProductBacklog(this);
+		}		
 	}
 
 	public Professional getScrumMaster() {
@@ -83,7 +103,7 @@ public class ProductBacklog {
 	@Override
 	public String toString() {
 		return "\n\nPRODUCTBACKLOG\nData: " + this.getDeadLine()
-				+ "\nProjeto: " + this.getProject()
+				+ "\nProjeto: " + this.getProject().getTitle()
 				+ "\nScrumMaster: " + this.getScrumMaster();
 	}
 

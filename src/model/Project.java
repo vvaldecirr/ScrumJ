@@ -52,8 +52,28 @@ public class Project {
 		return productBacklog;
 	}
 
+	/**
+	 * Método alterado para garantir que a visibilidade bidirecional seja íntegra
+	 * @param productBacklog
+	 */
 	public void setProductBacklog(ProductBacklog productBacklog) {
-		this.productBacklog = productBacklog;
+//		this.productBacklog = productBacklog;
+		
+		//Se o objeto a ser setado for o mesmo, não fazer nada
+		if (this.productBacklog == productBacklog)
+			return;
+		
+		//Se estiver nulificando o atributo garantir a integridade
+		if (productBacklog == null) {
+			this.productBacklog.setProject(null);
+			this.productBacklog = null;
+		} else { //Se o objeto a ser setado não for o mesmo, substituir garantindo a integridade 
+			if (this.productBacklog != null)
+				this.productBacklog.setProject(null);
+			
+			this.productBacklog = productBacklog;
+			productBacklog.setProject(this);
+		}
 	}
 
 	/**
@@ -61,8 +81,9 @@ public class Project {
 	 */
 	@Override
 	public String toString() {
-		return "\n\nPROJECT\nT�tulo: " + this.getTitle() 
-		+ "\nDescri��o: " + this.getDescription();
+		return "\n\nPROJECT\nTítulo: " + this.getTitle() 
+		+ "\nDescrição: " + this.getDescription()
+		+ "\nProductBackLog: " + this.getProductBacklog();
 	}
 
 }
