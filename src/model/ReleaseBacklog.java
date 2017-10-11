@@ -14,8 +14,8 @@ public class ReleaseBacklog {
 	private Date deadLine;
 	private String avaliation;
 	private Professional productOwner;
-	private List<UserStory> listUserStories;
-	private List<SprintBacklog> listSprintBacklogs;
+	private List<UserStory> userstories;
+	private List<SprintBacklog> sprintbacklogs;
 
 	/**
 	 * Simple Constructor
@@ -62,28 +62,44 @@ public class ReleaseBacklog {
 		this.productOwner = productOwner;
 	}
 
-	public List<UserStory> getUserStories() {
-		return listUserStories;
+	public List<UserStory> getUserstories() {
+		return userstories;
 	}
 
 	public void addUserStory(UserStory userStory) {
-		this.listUserStories.add(userStory);
+        if (this.userstories.contains(userStory))
+            return;
+
+        if (userStory == null) {
+            return;
+        } else {
+            this.userstories.add(userStory);
+            userStory.setReleaseBacklog(this);
+        }
 	}
 
     public void removeUserStory(UserStory userStory) {
-        this.listUserStories.remove(userStory);
+        this.userstories.remove(userStory);
     }
 
-	public List<SprintBacklog> getSprintBacklogs() {
-		return listSprintBacklogs;
+	public List<SprintBacklog> getSprintbacklogs() {
+		return sprintbacklogs;
 	}
 
 	public void addSprintBacklog(SprintBacklog sprintBacklog) {
-		this.listSprintBacklogs.add(sprintBacklog);
+        if (this.sprintbacklogs.contains(sprintBacklog))
+            return;
+
+        if (sprintBacklog == null) {
+            return;
+        } else {
+            this.sprintbacklogs.add(sprintBacklog);
+            sprintBacklog.setReleaseBacklog(this);
+        }
 	}
 
     public void removeUserStory(SprintBacklog sprintBacklog) {
-        this.listSprintBacklogs.remove(sprintBacklog);
+        this.sprintbacklogs.remove(sprintBacklog);
     }
 
 	/**

@@ -4,70 +4,77 @@ import java.util.List;
 
 /**
  * Model Class
- * 
- * @author Valdecir
  *
+ * @author Valdecir
  */
 public class SprintBacklog {
 
-	private String functionality;
-	private ReleaseBacklog releaseBacklog;
-	private List<Task> listTasks;
-	
-	/**
-	 * Simple Constructor
-	 */
-	public SprintBacklog() {
+    private String functionality;
+    private ReleaseBacklog releaseBacklog;
+    private List<Task> tasks;
 
-	}
+    /**
+     * Simple Constructor
+     */
+    public SprintBacklog() {
 
-	/**
-	 * Constructor
-	 * 
-	 * @param functionality
-	 * @param releaseBacklog
-	 */
-	public SprintBacklog(String functionality, ReleaseBacklog releaseBacklog) {
-		super();
-		this.setFunctionality(functionality);
-		this.setReleaseBacklog(releaseBacklog);
-	}
-
-	public String getFunctionality() {
-		return functionality;
-	}
-
-	public void setFunctionality(String functionality) {
-		this.functionality = functionality;
-	}
-
-	public ReleaseBacklog getReleaseBacklog() {
-		return releaseBacklog;
-	}
-
-	public void setReleaseBacklog(ReleaseBacklog releaseBacklog) {
-		this.releaseBacklog = releaseBacklog;
-	}
-
-    public List<Task> getTasks() {
-        return listTasks;
     }
 
-	public void addTask(Task task){
-		this.listTasks.add(task);
-	}
+    /**
+     * Constructor
+     *
+     * @param functionality
+     * @param releaseBacklog
+     */
+    public SprintBacklog(String functionality, ReleaseBacklog releaseBacklog) {
+        super();
+        this.setFunctionality(functionality);
+        this.setReleaseBacklog(releaseBacklog);
+    }
 
-	public void removeTask(Task task){
-		this.listTasks.remove(task);
-	}
+    public String getFunctionality() {
+        return functionality;
+    }
 
-	/**
-	 * Método que retorna uma String de descrição do objeto 
-	 */
-	@Override
-	public String toString() {
-		return "\n\nSPRINTBACKLOG\nFuncionalidade: " + this.getFunctionality() 
-		+ "\nReleaseBacklog: " + this.getReleaseBacklog();
-	}
+    public void setFunctionality(String functionality) {
+        this.functionality = functionality;
+    }
+
+    public ReleaseBacklog getReleaseBacklog() {
+        return releaseBacklog;
+    }
+
+    public void setReleaseBacklog(ReleaseBacklog releaseBacklog) {
+        this.releaseBacklog = releaseBacklog;
+    }
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void addTask(Task task) {
+        if (this.tasks.contains(task))
+            return;
+
+        if (task == null) {
+            return;
+        } else {
+            this.tasks.add(task);
+            task.setSprintBacklog(this);
+        }
+    }
+
+    public void removeTask(Task task) {
+        this.tasks.remove(task);
+    }
+
+    /**
+     * Método que retorna uma String de descrição do objeto
+     */
+    @Override
+    public String toString() {
+        return "\n\nSPRINTBACKLOG\nFuncionalidade: " + this.getFunctionality()
+                + "\nReleaseBacklog: " + this.getReleaseBacklog();
+    }
 
 }
