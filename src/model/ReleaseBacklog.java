@@ -14,8 +14,8 @@ public class ReleaseBacklog {
 	private Date deadLine;
 	private String avaliation;
 	private Professional productOwner;
-	private List<UserStory> userstories;
-	private List<SprintBacklog> sprintbacklogs;
+	private List<UserStory> listUserStories;
+	private List<SprintBacklog> listSprintBacklogs;
 
 	/**
 	 * Simple Constructor
@@ -62,44 +62,50 @@ public class ReleaseBacklog {
 		this.productOwner = productOwner;
 	}
 
-	public List<UserStory> getUserstories() {
-		return userstories;
+	public List<UserStory> getUserStories() {
+		return listUserStories;
 	}
 
 	public void addUserStory(UserStory userStory) {
-        if (this.userstories.contains(userStory))
+        if (this.listUserStories.contains(userStory))
             return;
 
         if (userStory == null) {
             return;
         } else {
-            this.userstories.add(userStory);
+            this.listUserStories.add(userStory);
             userStory.setReleaseBacklog(this);
         }
 	}
 
     public void removeUserStory(UserStory userStory) {
-        this.userstories.remove(userStory);
+        if (this.listUserStories.contains(userStory)){
+            userStory.setReleaseBacklog(null);
+            this.listUserStories.remove(userStory);
+        }
     }
 
-	public List<SprintBacklog> getSprintbacklogs() {
-		return sprintbacklogs;
+	public List<SprintBacklog> getSprintBacklogs() {
+		return listSprintBacklogs;
 	}
 
 	public void addSprintBacklog(SprintBacklog sprintBacklog) {
-        if (this.sprintbacklogs.contains(sprintBacklog))
+        if (this.listSprintBacklogs.contains(sprintBacklog))
             return;
 
         if (sprintBacklog == null) {
             return;
         } else {
-            this.sprintbacklogs.add(sprintBacklog);
+            this.listSprintBacklogs.add(sprintBacklog);
             sprintBacklog.setReleaseBacklog(this);
         }
 	}
 
-    public void removeUserStory(SprintBacklog sprintBacklog) {
-        this.sprintbacklogs.remove(sprintBacklog);
+    public void removeSprintBacklog(SprintBacklog sprintBacklog) {
+        if (this.listSprintBacklogs.contains(sprintBacklog)){
+            sprintBacklog.setReleaseBacklog(null);
+            this.listSprintBacklogs.remove(sprintBacklog);
+        }
     }
 
 	/**
