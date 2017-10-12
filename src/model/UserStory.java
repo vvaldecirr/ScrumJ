@@ -74,19 +74,19 @@ public class UserStory {
 	}
 
     public void addTask(Task task) {
-        if (this.tasks.contains(task))
+        if (this.listTasks.contains(task))
             return;
 
         if (task == null) {
             return;
         } else {
-            this.tasks.add(task);
+            this.listTasks.add(task);
             task.setUserHistory(this);
         }
     }
 
 	public void removeTask(Task task){
-	    if (this.tasks.contains(task)){
+	    if (this.listTasks.contains(task)){
             task.setSprintBacklog(null);
             this.listTasks.remove(task);
 	    }
