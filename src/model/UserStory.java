@@ -73,16 +73,27 @@ public class UserStory {
 		return listTasks;
 	}
 
-	public void addTask(Task task) {
-		this.listTasks.add(task);
+    public void addTask(Task task) {
+        if (this.tasks.contains(task))
+            return;
+
+        if (task == null) {
+            return;
+        } else {
+            this.tasks.add(task);
+            task.setUserHistory(this);
+        }
+    }
+
+	public void removeTask(Task task){
+	    if (this.tasks.contains(task)){
+            task.setSprintBacklog(null);
+            this.listTasks.remove(task);
+	    }
 	}
 
-	public void removeTask(Task task) {
-		this.listTasks.remove(task);
-	}
-	
 	/**
-	 * Método que retorna uma String de descrição do objeto 
+	 * Método que retorna uma String de descrição do objeto
 	 */
 	@Override
 	public String toString() {

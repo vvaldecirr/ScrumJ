@@ -55,22 +55,22 @@ public class ProductBacklog {
 	 */
 	public void setProject(Project project) {
 //		this.project = project;
-		
+
 		//Se o objeto a ser setado for o mesmo, não fazer nada
 		if (this.project == project)
 			return;
-		
+
 		//Se estiver nulificando o atributo garantir a integridade
 		if (project == null) {
 			this.project.setProductBacklog(null);
 			this.project = null;
-		} else { //Se o objeto a ser setado não for o mesmo, substituir garantindo a integridade 
+		} else { //Se o objeto a ser setado não for o mesmo, substituir garantindo a integridade
 			if (this.project != null)
 				this.project.setProductBacklog(null);
-			
+
 			this.project = project;
 			project.setProductBacklog(this);
-		}		
+		}
 	}
 
 	public Professional getScrumMaster() {
@@ -85,16 +85,27 @@ public class ProductBacklog {
 		return listUserStories;
 	}
 
-	public void addUserStory(UserStory userStory) {
-		this.listUserStories.add(userStory);
-	}
+    public void addUserStory(UserStory userStory) {
+        if (this.listUserStories.contains(userStory))
+            return;
 
-	public void removeUserStory(UserStory userStory) { 
-		this.listUserStories.remove(userStory); 
+        if (userStory == null) {
+            return;
+        } else {
+            this.listUserStories.add(userStory);
+            userStory.setProductBacklog(this);
+        }
+    }
+
+	public void removeUserStory(UserStory userStory) {
+        if (this.listUserStories.contains(userStory)){
+            userStory.setProductBacklog(null);
+            this.listUserStories.remove(userStory);
+		}
 	}
 
 	/**
-	 * Método que retorna uma String de descrição do objeto 
+	 * Método que retorna uma String de descrição do objeto
 	 */
 	@Override
 	public String toString() {

@@ -67,11 +67,22 @@ public class ReleaseBacklog {
 	}
 
 	public void addUserStory(UserStory userStory) {
-		this.listUserStories.add(userStory);
+        if (this.listUserStories.contains(userStory))
+            return;
+
+        if (userStory == null) {
+            return;
+        } else {
+            this.listUserStories.add(userStory);
+            userStory.setReleaseBacklog(this);
+        }
 	}
 
     public void removeUserStory(UserStory userStory) {
-        this.listUserStories.remove(userStory);
+        if (this.listUserStories.contains(userStory)){
+            userStory.setReleaseBacklog(null);
+            this.listUserStories.remove(userStory);
+        }
     }
 
 	public List<SprintBacklog> getSprintBacklogs() {
@@ -79,11 +90,22 @@ public class ReleaseBacklog {
 	}
 
 	public void addSprintBacklog(SprintBacklog sprintBacklog) {
-		this.listSprintBacklogs.add(sprintBacklog);
+        if (this.listSprintBacklogs.contains(sprintBacklog))
+            return;
+
+        if (sprintBacklog == null) {
+            return;
+        } else {
+            this.listSprintBacklogs.add(sprintBacklog);
+            sprintBacklog.setReleaseBacklog(this);
+        }
 	}
 
-    public void removeUserStory(SprintBacklog sprintBacklog) {
-        this.listSprintBacklogs.remove(sprintBacklog);
+    public void removeSprintBacklog(SprintBacklog sprintBacklog) {
+        if (this.listSprintBacklogs.contains(sprintBacklog)){
+            sprintBacklog.setReleaseBacklog(null);
+            this.listSprintBacklogs.remove(sprintBacklog);
+        }
     }
 
 	/**

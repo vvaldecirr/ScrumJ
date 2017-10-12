@@ -4,7 +4,7 @@ import java.util.List;
 
 /**
  * Model Class
- * 
+ *
  * @author Valdecir
  *
  */
@@ -13,7 +13,7 @@ public class SprintBacklog {
 	private String functionality;
 	private ReleaseBacklog releaseBacklog;
 	private List<Task> listTasks;
-	
+
 	/**
 	 * Simple Constructor
 	 */
@@ -23,7 +23,7 @@ public class SprintBacklog {
 
 	/**
 	 * Constructor
-	 * 
+	 *
 	 * @param functionality
 	 * @param releaseBacklog
 	 */
@@ -53,20 +53,31 @@ public class SprintBacklog {
         return listTasks;
     }
 
-	public void addTask(Task task){
-		this.listTasks.add(task);
-	}
+    public void addTask(Task task) {
+        if (this.tasks.contains(task))
+            return;
+
+        if (task == null) {
+            return;
+        } else {
+            this.tasks.add(task);
+            task.setSprintBacklog(this);
+        }
+    }
 
 	public void removeTask(Task task){
-		this.listTasks.remove(task);
+	    if (this.tasks.contains(task)){
+            task.setSprintBacklog(null);
+            this.listTasks.remove(task);
+	    }
 	}
 
 	/**
-	 * Método que retorna uma String de descrição do objeto 
+	 * Método que retorna uma String de descrição do objeto
 	 */
 	@Override
 	public String toString() {
-		return "\n\nSPRINTBACKLOG\nFuncionalidade: " + this.getFunctionality() 
+		return "\n\nSPRINTBACKLOG\nFuncionalidade: " + this.getFunctionality()
 		+ "\nReleaseBacklog: " + this.getReleaseBacklog();
 	}
 
