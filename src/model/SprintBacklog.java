@@ -46,7 +46,12 @@ public class SprintBacklog {
 	}
 
 	public void setReleaseBacklog(ReleaseBacklog releaseBacklog) {
-		this.releaseBacklog = releaseBacklog;
+		if ( releaseBacklog == null){
+		    return;
+        } else {
+		    releaseBacklog.addSprintBacklog(this);
+            this.releaseBacklog = releaseBacklog;
+        }
 	}
 
     public List<Task> getTasks() {

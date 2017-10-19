@@ -78,7 +78,12 @@ public class Task {
 	}
 
 	public void setUserHistory(UserStory userHistory) {
-		this.userHistory = userHistory;
+		if (userHistory == null){
+			return;
+		} else {
+			userHistory.addTask(this);
+			this.userHistory = userHistory;
+		}
 	}
 
 	public Professional getProfessional() {
@@ -94,7 +99,12 @@ public class Task {
 	}
 
 	public void setSprintBacklog(SprintBacklog sprintBacklog) {
-		this.sprintBacklog = sprintBacklog;
+		if (sprintBacklog == null){
+			return;
+		} else {
+			sprintBacklog.addTask(this);
+			this.sprintBacklog = sprintBacklog;
+		}
 	}
 
 	/**
