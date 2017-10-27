@@ -58,7 +58,12 @@ public class UserStory {
 	}
 
 	public void setProductBacklog(ProductBacklog productBacklog) {
-		this.productBacklog = productBacklog;
+	    if (productBacklog == null){
+            return;
+	    } else {
+            this.productBacklog = productBacklog;
+            productBacklog.addUserStory(this);
+        }
 	}
 
 	public ReleaseBacklog getReleaseBacklog() {
