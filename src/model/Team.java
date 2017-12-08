@@ -38,6 +38,9 @@ public class Team {
 	}
 
 	public void setFunction(String function) {
+		if (function == null){
+			return;
+		}
 		this.function = function;
 	}
 
@@ -46,6 +49,9 @@ public class Team {
 	}
 
 	public void setProfessional(Professional professional) {
+		if (professional == null){
+			return;
+		}
 		this.professional = professional;
 	}
 
@@ -54,6 +60,9 @@ public class Team {
 	}
 
 	public void setProject(Project project) {
+		if (project == null){
+			return;
+		}
 		this.project = project;
 	}
 
