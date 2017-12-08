@@ -66,7 +66,7 @@ public class Professional {
 	public void setEmail(String email) throws Exception {
 //		validação basica para evitar gasto de processamento no validaEmail
 		if (email == null){
-			return
+			return;
 		}
 		Professional.validaEmail(email);
 		this.email = email;
@@ -78,7 +78,7 @@ public class Professional {
 
 	public void setUnicPass(String unicPass) throws Exception {
 		if (unicPass == null){
-			return
+			return;
 		}
 		validaUnicPass(unicPass);
 		this.unicPass = unicPass;
