@@ -87,10 +87,14 @@ public class Task {
 	}
 
 	public Professional getProfessional() {
+
 		return professional;
 	}
 
 	public void setProfessional(Professional professional) {
+		if (professional == null){
+			return;
+		}
 		this.professional = professional;
 	}
 
