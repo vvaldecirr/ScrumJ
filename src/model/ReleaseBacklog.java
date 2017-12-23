@@ -59,6 +59,9 @@ public class ReleaseBacklog {
 	}
 
 	public void setProductOwner(Professional productOwner) {
+		if (productOwner == null){
+			return;
+		}
 		this.productOwner = productOwner;
 	}
 

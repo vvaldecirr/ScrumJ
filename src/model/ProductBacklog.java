@@ -78,6 +78,9 @@ public class ProductBacklog {
 	}
 
 	public void setScrumMaster(Professional scrumMaster) {
+		if (scrumMaster == null){
+			return;
+		}
 		this.scrumMaster = scrumMaster;
 	}
 
